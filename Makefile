@@ -3,7 +3,7 @@ all: classify
 DATABASE = data/database.sqlite
 
 dataset.tsv: $(DATABASE)
-	python extractor.py > $@ 2> log.out
+	python extractor.py $< > $@ 2> log.out
 
 
 train.tsv: dataset.tsv
